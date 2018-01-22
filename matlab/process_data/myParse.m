@@ -10,7 +10,7 @@ for file = files'
         res(i,1) = csi_entry.timestamp_low/(1.0e+05);
         csi = get_scaled_csi(csi_entry);
         csi_abs = abs(csi);
-        csi_1d = reshape(csi_abs,270,1);
+        csi_1d = reshape(csi_abs,csi_entry.Nrx*csi_entry.Ntx*30,1);
         for j = 1:length(csi_1d)
             res(i,j+1) = csi_1d(j);
         end
